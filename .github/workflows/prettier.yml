@@ -17,11 +17,10 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           # This is important to fetch the changes to the previous commit
           fetch-depth: 0
-
       - name: Check source code style with Prettier
-        uses: creyD/prettier_action@v3.3
+        uses: creyD/prettier_action@v4.3
         with:
-          prettier_options: --check \".\"
+          prettier_options: --check .
           only_changed: True
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
